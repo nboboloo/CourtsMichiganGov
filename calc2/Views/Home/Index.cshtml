@@ -1,0 +1,281 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $("#display").keypress(function(e)
+             {
+                if (String.fromCharCode(e.keyCode).match(/[^0-9+-/*]/g)) return false;
+            });
+            $("#display").height("40px").width("312px");
+            $("#b0").click(function() {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+                {
+                    $("#display").val("0");
+                } else
+                {
+                    $("#display").val(x + "0")
+                }
+            });
+            $("#b1").click(function()
+            {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+                {
+                    $("#display").val("1");
+                } else
+                {
+                    $("#display").val(x + "1")
+                }
+            });
+            $("#b2").click(function()
+            {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+                {
+                    $("#display").val("2");
+                } else
+                {
+                    $("#display").val(x + "2")
+                }
+            });
+            $("#b3").click(function()
+              {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+                {
+                    $("#display").val("3");
+                } else
+                {
+                    $("#display").val(x + "3")
+                }
+            });
+            $("#b4").click(function()
+             {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+                {
+                    $("#display").val("4");
+                } else
+                {
+                    $("#display").val(x + "4")
+                }
+            });
+            $("#b5").click(function()
+             {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+                {
+                    $("#display").val("5");
+                } else
+                {
+                    $("#display").val(x + "5")
+                }
+            });
+            $("#b6").click(function()
+             {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+                {
+                    $("#display").val("6");
+                } else
+                {
+                    $("#display").val(x + "6")
+                }
+            });
+            $("#b7").click(function()
+              {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+
+               {
+                    $("#display").val("7");
+                } else
+                {
+                    $("#display").val(x + "7")
+                }
+            });
+            $("#b8").click(function()
+              {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+                {
+                    $("#display").val("8");
+                } else
+                {
+                    $("#display").val(x + "8")
+                }
+            });
+            $("#b9").click(function()
+             {
+                var x = document.getElementById("display").value;
+                if (x == "0")
+                {
+                    $("#display").val("9");
+                } else
+                {
+                    $("#display").val(x + "9")
+                }
+            });
+            $("#div").click(function()
+              {
+                var x = document.getElementById("display").value;
+                var y = x.slice(-1)
+                if (y == "/" || y == "+" || y == "*" || y == "-") {} else {
+                    $("#display").val(x + "/")
+                }
+            });
+            $("#multy").click(function()
+              {
+                var x = document.getElementById("display").value;
+                var y = x.slice(-1)
+                if (y == "/" || y == "+" || y == "*" || y == "-") {} else {
+                    $("#display").val(x + "*")
+                }
+            });
+            $("#sub").click(function()
+              {
+                var x = document.getElementById("display").value;
+                var y = x.slice(-1)
+                if (y == "/" || y == "+" || y == "*" || y == "-") {} else {
+                    $("#display").val(x + "-")
+                }
+            });
+            $("#add").click(function()
+             {
+                var x = document.getElementById("display").value;
+                var y = x.slice(-1)
+                if (y == "/" || y == "+" || y == "*" || y == "-") {} else {
+                    $("#display").val(x + "+")
+                }
+            });
+            $("#dot").click(function()
+              {
+                var x = document.getElementById("display").value;
+                var y = x.slice(-1)
+                if (y == ".") {} else
+                {
+                    $("#display").val(x + ".")
+                }
+            });
+            $("#ce").click(function()
+            {
+                var x = document.getElementById("display").value;
+                $("#display").val(x.substring(0, x.length - 1))
+            });
+            $("#re").click(function () {
+                $("#display").val(null);
+            });
+        });
+</script>
+<style>
+    #d1 {
+        border: 1px solid black;
+        height: 320px;
+        width: 320px;
+    }
+    /*.divTable {
+        display: table;
+        width: 100%;
+    }
+
+    .divTableRow {
+        display: table-row;
+    }
+
+    .divTableHeading {
+        background-color: #EEE;
+        display: table-header-group;
+    }
+
+    .divTableCell, .divTableHead {
+        display: table-cell;
+        padding: 3px 10px;
+    }
+
+    .divTableHeading {
+        display: table-header-group;
+        font-weight: bold;
+    }
+
+    .divTableFoot {
+        display: table-footer-group;
+        font-weight: bold;
+    }
+
+    .divTableBody {
+        display: table-row-group;
+    }*/
+</style>
+<br /><br /><br /><br /><br /><br /><br />
+<center>
+    <div id="d1">
+        @using (@Html.BeginForm("Index", "Home"))
+        {
+            <table style="height:25%;border:thick">
+                <tr>
+                    <td colspan="4">@Html.TextBox("display", (string)ViewBag.result)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" id="ce" value="CE" style="height:40px;width:155px" />
+                    </td>
+                    <td colspan="2">
+                        <input type="submit" id="re" value="Clear" style="height:40px;width:155px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="b7" value="7" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="b8" value="8" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="b9" value="9" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="div" value="/" style="height:40px;width:75px" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="b4" value="4" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="b5" value="5" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="b6" value="6" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="multy" value="*" style="height:40px;width:75px" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="b1" value="1" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="b2" value="2" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="b3" value="3" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="sub" value="-" style="height:40px;width:75px" /></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="b0" value="0" style="height:40px;width:75px" /></td>
+                    <td><input type="button" id="dot" value="." style="height:40px;width:75px" /></td>
+                    <td></td>
+                    <td><input type="button" id="add" value="+" style="height:40px;width:75px" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="submit" id="eq" value="=" style="height:40px;width:75px" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+</center>
+@if (@ViewBag.flag == 0)
+{
+    Response.Write("<script>alert('no value')</script>");
+}
+
+    </div>
+</body>
+</html>
